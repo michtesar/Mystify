@@ -1,7 +1,7 @@
 class Point {
   constructor() {
     this.position = createVector(random(width), random(height));
-    this.acceleration = random(3, 10);
+    this.acceleration = random(config.minAcceleration, config.maxAcceleration);
     this.velocity = createVector(
       this.acceleration * random(),
       this.acceleration * random()

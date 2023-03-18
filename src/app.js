@@ -6,13 +6,16 @@ let polygons = [];
 
 function setup() {
   canvas = createCanvas(w, h);
+  colorMode(HSB);
   for (let i = 0; i < config.nPolygons; i++) {
-    polygons.push(new Polygon(config.nVertices));
+    polygons.push(
+      new Polygon(config.nVertices, config.nShadows, config.changeColors)
+    );
   }
 }
 
 function draw() {
-  background(28);
+  background(0, 0, 10);
   for (let i = 0; i < config.nPolygons; i++) {
     polygons[i].draw();
     polygons[i].update();
